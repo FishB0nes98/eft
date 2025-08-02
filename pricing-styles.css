@@ -190,7 +190,7 @@ nav {
 /* Content Sections */
 .content-section {
     position: relative;
-    padding: 8rem 2rem 4rem;
+    padding: 4rem 2rem 2rem;
     margin: 0;
     text-align: left;
     background-color: #ffffff;
@@ -257,7 +257,7 @@ nav {
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: 1rem;
     margin: 3rem 0;
 }
 
@@ -266,19 +266,55 @@ nav {
     border-radius: 15px;
     padding: 2rem;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15), 0 8px 20px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
     border: 1px solid var(--sand-medium);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .pricing-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2), 0 15px 30px rgba(0,0,0,0.15), 0 8px 18px rgba(0,0,0,0.12);
 }
 
-.pricing-card.featured {
-    border-color: var(--ocean-light);
-    background: var(--sand-light);
+.pricing-card.most-popular {
+    position: relative;
+    background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+    border: 2px solid #ff9800;
+    box-shadow: 0 20px 40px rgba(255, 152, 0, 0.3), 0 15px 30px rgba(0,0,0,0.15), 0 8px 18px rgba(255, 152, 0, 0.2);
+}
+
+.pricing-card.most-popular:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(255, 152, 0, 0.4), 0 20px 40px rgba(0,0,0,0.2), 0 12px 25px rgba(255, 152, 0, 0.3);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+    z-index: 10;
+}
+
+.pricing-card.most-popular .price {
+    color: #e65100;
+    font-size: 3rem;
+}
+
+.pricing-card.most-popular .save {
+    color: #ff6f00;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .pricing-card h3 {
@@ -297,9 +333,9 @@ nav {
 }
 
 .save {
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: var(--accent-teal);
-    font-weight: 500;
+    font-weight: 600;
     display: block;
     margin-top: 0.5rem;
 }
@@ -308,7 +344,8 @@ nav {
     color: var(--text-medium);
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 0;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
 }
 
 /* Emergency Section */
@@ -328,8 +365,74 @@ nav {
     background: var(--foam-white);
 }
 
+.emergency-card.emergency-highlighted {
+    background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+    border: 2px solid #f44336;
+    border-left: 4px solid #d32f2f;
+    box-shadow: 0 15px 35px rgba(244, 67, 54, 0.2), 0 8px 20px rgba(0,0,0,0.1), 0 4px 12px rgba(244, 67, 54, 0.15);
+}
+
+.emergency-card.emergency-highlighted:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(244, 67, 54, 0.3), 0 15px 30px rgba(0,0,0,0.15), 0 8px 18px rgba(244, 67, 54, 0.2);
+}
+
 .emergency-card .price {
     color: var(--accent-teal);
+}
+
+.emergency-card.emergency-highlighted .price {
+    color: #c62828;
+    font-weight: 700;
+}
+
+.emergency-card.emergency-highlighted h3 {
+    color: #b71c1c;
+}
+
+/* Contact Button Styles */
+.contact-button {
+    margin-top: auto;
+    text-align: center;
+}
+
+.btn-contact {
+    display: inline-block;
+    background: linear-gradient(135deg, #05b2b5 0%, #04a0a3 100%);
+    color: white;
+    padding: 0.6rem 1.5rem;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(5, 178, 181, 0.3);
+}
+
+.btn-contact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(5, 178, 181, 0.4);
+    background: linear-gradient(135deg, #04a0a3 0%, #05b2b5 100%);
+}
+
+.pricing-card.most-popular .btn-contact {
+    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+.pricing-card.most-popular .btn-contact:hover {
+    background: linear-gradient(135deg, #f57c00 0%, #e65100 100%);
+    box-shadow: 0 8px 25px rgba(255, 152, 0, 0.4);
+}
+
+.emergency-card.emergency-highlighted .btn-contact {
+    background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+    box-shadow: 0 4px 15px rgba(244, 67, 54, 0.3);
+}
+
+.emergency-card.emergency-highlighted .btn-contact:hover {
+    background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+    box-shadow: 0 8px 25px rgba(244, 67, 54, 0.4);
 }
 
 /* Policy List */
@@ -381,19 +484,19 @@ nav {
     display: block;
     margin: 0 auto;
     width: fit-content;
-    background: linear-gradient(135deg, var(--ocean-medium) 0%, var(--accent-teal) 100%);
+    background: linear-gradient(135deg, #05b2b5 0%, #04a0a3 100%);
     color: white;
     padding: 1.2rem 2.5rem;
     text-decoration: none;
     border-radius: 50px;
     font-size: 1.1rem;
     transition: all 0.4s ease;
-    box-shadow: 0 8px 25px rgba(74, 144, 164, 0.3);
+    box-shadow: 0 20px 40px rgba(5, 178, 181, 0.4), 0 12px 25px rgba(0, 0, 0, 0.3), 0 6px 15px rgba(5, 178, 181, 0.3);
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(74, 144, 164, 0.4);
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px rgba(5, 178, 181, 0.5), 0 18px 35px rgba(0, 0, 0, 0.4), 0 10px 20px rgba(5, 178, 181, 0.4);
 }
 
 /* Disclaimer */
@@ -420,11 +523,21 @@ nav {
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-medium) 100%);
+    background: linear-gradient(135deg, #05b2b5 0%, #04a0a3 100%);
     color: white;
     text-align: center;
     padding: 2rem 0;
     border-radius: 50px 50px 0 0;
+}
+
+.footer-disclaimer {
+    font-size: 0.6rem;
+    line-height: 1.2;
+    margin-top: 1rem;
+    opacity: 0.8;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 footer p {
@@ -521,6 +634,20 @@ html {
 /* Sections */
 section {
     margin-bottom: 0;
+}
+
+/* Testimonial Link Styling */
+.testimonial-link {
+    color: #d4a574;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.testimonial-link:hover {
+    color: var(--ocean-medium);
+    text-decoration: none;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Smooth Shadows */
