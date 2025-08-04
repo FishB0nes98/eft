@@ -8,6 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .logo h1 {
+            white-space: nowrap;
+        }
+        .logo {
+            margin-right: 2rem;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,11 +25,22 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="aboutme.html" class="nav-link">About Me</a></li>
+                <li><a href="aboutme.html" class="nav-link">About</a></li>
                 <li><a href="techniques.html" class="nav-link active">Techniques</a></li>
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="reviews.html" class="nav-link">Reviews</a></li>
-                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li class="nav-dropdown">
+                    <a href="faq.html" class="nav-link">FAQ</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="faq.html#faq-content" class="dropdown-link">About EFT Tapping</a></li>
+                        <li><a href="faq.html#spiritual-techniques" class="dropdown-link">Spiritual & Holistic Techniques</a></li>
+                        <li><a href="faq.html#online-work" class="dropdown-link">Online, Offline & Mobile Work</a></li>
+                        <li><a href="faq.html#about-me" class="dropdown-link">About Me & My Approach</a></li>
+                        <li><a href="faq.html#session-details" class="dropdown-link">Session Details & Logistics</a></li>
+                        <li><a href="faq.html#travel-logistics" class="dropdown-link">Travel & Logistics</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -126,6 +145,9 @@
         <section id="offline" class="content-section alt-bg">
             <div class="container">
                 <h2>Meet Me Offline</h2>
+                <div class="cta-button" style="margin: 2rem 0;">
+                    <a href="contact.html" class="btn-primary">Contact Me NOW</a>
+                </div>
                 <p>Sometimes, nothing beats a face-to-face connection. As a mobile therapist, I'm always on the move, ready to bring my healing touch right to your doorstep. Imagine the comfort of a cozy, familiar environment combined with the expertise of a traveling therapist. Whether it's an intuitive massage, EFT tapping session, or a good old-fashioned chat, I'm here to provide a personalized, in-person experience that's tailored just for you.</p>
                 <p>So, if you're in town and I happen to be too, you never know—neither do I! Let's make some magic happen! Reach out, and let's see if our paths can cross for a healing session that's as unique as you are. You prefer to come to me? No problem. I have a treatment room we can use!</p>
                 <p>And here's a fun idea: Why not invite me for a family and friends treatment week? It's like a wellness retreat, but in the comfort of your own home. Let's create an unforgettable experience together! (About this option, please contact me)</p>

@@ -8,6 +8,167 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .logo h1 {
+            white-space: nowrap;
+        }
+        .logo {
+            margin-right: 2rem;
+        }
+        
+        .featured-review {
+            background: linear-gradient(135deg, #f0fffe 0%, #e6fffe 100%);
+            border: 2px solid #05b2b5;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 25px rgba(5, 178, 181, 0.15);
+        }
+        
+        .featured-review p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+        }
+        
+        .author-credentials {
+            color: #05b2b5;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            align-items: stretch;
+        }
+        
+        .simple-review {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #05b2b5;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100%;
+        }
+        
+        .review-content {
+            flex-grow: 1;
+        }
+        
+        .simple-review:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .simple-review h4 {
+            color: #05b2b5;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .simple-review p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .review-author {
+            font-weight: 600;
+            color: #333;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .simple-review {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Wave animation for content sections */
+        .content-section.intro::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background-image: url('wave-divider.svg');
+            background-size: 100% 120px;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            z-index: 10;
+            pointer-events: none;
+            transform: scaleY(-1);
+            transition: transform 0.1s ease-out;
+        }
+
+        @keyframes waveFloat {
+            0% { transform: scaleY(-1) translateX(0px) translateY(0px); }
+            25% { transform: scaleY(-1) translateX(-5px) translateY(-2px); }
+            50% { transform: scaleY(-1) translateX(0px) translateY(-4px); }
+            75% { transform: scaleY(-1) translateX(5px) translateY(-2px); }
+            100% { transform: scaleY(-1) translateX(0px) translateY(0px); }
+        }
+
+        .content-section.intro::before.animate {
+            animation: waveFloat 3s ease-in-out infinite;
+        }
+        
+        .content-section.alt-bg::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background-image: url('wave-divider.svg');
+            background-size: 100% 120px;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            z-index: 10;
+            pointer-events: none;
+            transform: scaleY(-1);
+        }
+        
+        /* Hero section wave divider */
+        .hero-section {
+            position: relative;
+        }
+        
+        .wave-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+        
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 120px;
+        }
+        
+        .wave-divider .shape-fill {
+            fill: #ffffff;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,11 +178,30 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="aboutme.html" class="nav-link">About Me</a></li>
+                <li><a href="aboutme.html" class="nav-link">About</a></li>
                 <li><a href="techniques.html" class="nav-link">Techniques</a></li>
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-                <li><a href="reviews.html" class="nav-link active">Reviews</a></li>
-                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li class="nav-dropdown">
+                    <a href="reviews.html" class="nav-link active">Reviews</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reviews.html#featured-testimonial" class="dropdown-link">Featured Professional Testimonial</a></li>
+                        <li><a href="reviews.html#eft-reviews" class="dropdown-link">EFT Tapping Experiences</a></li>
+                        <li><a href="reviews.html#massage-reviews" class="dropdown-link">Massage Therapy Experiences</a></li>
+                        <li><a href="reviews.html#bars-reviews" class="dropdown-link">Access BARS Therapy Experiences</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="faq.html" class="nav-link">FAQ</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="faq.html#faq-content" class="dropdown-link">About EFT Tapping</a></li>
+                        <li><a href="faq.html#spiritual-techniques" class="dropdown-link">Spiritual & Holistic Techniques</a></li>
+                        <li><a href="faq.html#online-work" class="dropdown-link">Online, Offline & Mobile Work</a></li>
+                        <li><a href="faq.html#about-me" class="dropdown-link">About Me & My Approach</a></li>
+                        <li><a href="faq.html#session-details" class="dropdown-link">Session Details & Logistics</a></li>
+                        <li><a href="faq.html#travel-logistics" class="dropdown-link">Travel & Logistics</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -30,14 +210,36 @@
         <section id="hero" class="hero-section">
             <div class="hero-content">
                 <h1>Client Reviews & Testimonials</h1>
-                <p class="hero-subtitle">Discover the transformative experiences of those who have embarked on their healing journey with Chill To You. These heartfelt testimonials reflect the profound impact of EFT tapping, BARS therapy, massage, and spiritual healing in real lives.</p>
+                <p class="hero-subtitle">Every healing journey is unique, and every story matters. These testimonials come from beautiful souls who have trusted me to guide them through their personal transformation. From overcoming deep traumas to finding peace and clarity, each review represents a step toward healing and empowerment.</p>
+            </div>
+            <div class="wave-divider">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
             </div>
         </section>
 
-        <section id="intro" class="content-section intro">
+
+
+        <section id="featured-testimonial" class="content-section">
             <div class="container">
-                <div class="intro-text">
-                    <p>Every healing journey is unique, and every story matters. These testimonials come from beautiful souls who have trusted me to guide them through their personal transformation. From overcoming deep traumas to finding peace and clarity, each review represents a step toward healing and empowerment.</p>
+                <h2>Featured Professional Testimonial</h2>
+                
+                <div class="featured-review">
+                    <p><em>"I consider Csilla to be a very authentic helper, who herself has gone through all the techniques she uses to help her clients regarding her own life's obstacles. And since she has been through a lot herself, there is nothing that could surprise or scare her - you can talk to her about anything with complete confidence, knowing that she can handle it, and this is incredibly reassuring!</em></p>
+                    
+                    <p><em>She is also extremely empathetic and pays maximum attention to her clients. When working with her, each time I feel that her focus is completely on me and on our work, she holds the space for the work with a laser sharp focus, but at the same time with a warm heart and complete acceptance. Thanks to her developed intuition and close connection with the spiritual world, she very quickly senses the root of a problem, which she then helps to solve with the help of her wide repertoire of tools.</em></p>
+                    
+                    <p><em>She doesn't stop the EFT process until there's even a tiny bit of the problem left (we had a tapping session where the intensity of the problem was going down from 10/10 one by one, nevertheless she still patiently followed the process until arriving at 0).</em></p>
+                    
+                    <p><em>During the pendulum sessions she surrenders herself to the higher guidance with great humility and modesty, checking even during the process many times whether her own consciousness or expectations are not interfering, or whether the process is not being disturbed by other factors. This is particularly reassuring, as thus you can entrust yourself to her in complete faith. I also learned that it is worth listening to the pendulum's messages, because they are very accurate!</em></p>
+                    
+                    <p><em>Long story short: I recommend Csilla with all my heart to anyone who really wants to progress and finally move forward from being stuck!"</em></p>
+                    
+                    <p class="review-author"><strong>— Naomi Eszter Wagner</strong><br>
+                    <span class="author-credentials">Homeopath, Psychologist and Face reader</span></p>
                 </div>
             </div>
         </section>
@@ -46,43 +248,57 @@
             <div class="container">
                 <h2>EFT Tapping Experiences</h2>
                 
-                <div class="simple-review">
-                    <p><em>"Working with Chilly began in April and has continued since then. I was (and still am) in a very difficult situation when we first met. I was frustrated and didn't know how to move forward. She provides me with support in every conversation, helping me take small steps ahead. I had specific questions and initially sought only a little bit of guidance, but I received so much more. I gained clarity on my capabilities and limitations, and learned what to focus on and which areas of my life needed attention. We even used the pendulum to explore areas where I can still improve. Talking to Chilly provided answers to many of my questions. She addressed me with great kindness, understanding, and empathy.</em></p>
-                    <p><em>I wholeheartedly recommend her to anyone who feels lost and unsure of their direction in life. Thank you, Chilly."</em></p>
-                    <p class="review-author">— Anett (Germany)</p>
-                </div>
+                <div class="reviews-grid">
+                    <div class="simple-review">
+                        <div class="review-content">
+                            <p><em>"Working with Chilly began in April and has continued since then. I was (and still am) in a very difficult situation when we first met. I was frustrated and didn't know how to move forward. She provides me with support in every conversation, helping me take small steps ahead. I had specific questions and initially sought only a little bit of guidance, but I received so much more. I gained clarity on my capabilities and limitations, and learned what to focus on and which areas of my life needed attention. We even used the pendulum to explore areas where I can still improve. Talking to Chilly provided answers to many of my questions. She addressed me with great kindness, understanding, and empathy.</em></p>
+                            <p><em>I wholeheartedly recommend her to anyone who feels lost and unsure of their direction in life. Thank you, Chilly."</em></p>
+                        </div>
+                        <p class="review-author">— Anett (Germany)</p>
+                    </div>
 
-                <div class="simple-review">
-                    <p><em>"Dear Chilly, thank you very much for your work. I had many realizations as a result of the tapping we had done together. You are a very good listener, observer, and you lead the conversation well. With your help, I have made a lot of progress. During the sessions, I had many eye opening moments. Thanks to this, I am starting to open my eyes to the people around me, in my family, and for a possible new and positive life thanks to you. Thank you."</em></p>
-                    <p class="review-author">— Vera (Italy)</p>
-                </div>
+                    <div class="simple-review">
+                        <div class="review-content">
+                            <p><em>"Dear Chilly, thank you very much for your work. I had many realizations as a result of the tapping we had done together. You are a very good listener, observer, and you lead the conversation well. With your help, I have made a lot of progress. During the sessions, I had many eye opening moments. Thanks to this, I am starting to open my eyes to the people around me, in my family, and for a possible new and positive life thanks to you. Thank you."</em></p>
+                        </div>
+                        <p class="review-author">— Vera (Italy)</p>
+                    </div>
 
-                <div class="simple-review">
-                    <p><em>"I wholeheartedly recommend Chilly's work. We went through an extensive energetic healing journey together. She constantly listened to me, guided me, but still allowed space for my feelings and intuitions. In this way, we were able to work together very nicely, effectively, and most importantly, we got absolutely the maximum out of the topic I approached her with."</em></p>
-                    <p class="review-author">— Gitta (Hungary)</p>
-                </div>
+                    <div class="simple-review">
+                        <div class="review-content">
+                            <p><em>"I wholeheartedly recommend Chilly's work. We went through an extensive energetic healing journey together. She constantly listened to me, guided me, but still allowed space for my feelings and intuitions. In this way, we were able to work together very nicely, effectively, and most importantly, we got absolutely the maximum out of the topic I approached her with."</em></p>
+                        </div>
+                        <p class="review-author">— Gitta (Hungary)</p>
+                    </div>
 
-                <div class="simple-review">
-                    <p><em>"I was preparing for a big trip. The initial anticipation and excitement were replaced by a heavy feeling. I realized that I needed an energetic solution for my fear of height. I turned to Chilly for help, as we had worked together successfully before. During our work, she managed to see and release the painful experience of me. We experienced great depths together, and there was even a lightness in it. After that, the feeling of fear of heights disappeared for me, and the excitement before the trip returned. 'Here I am, traveling !!!'"</em></p>
-                    <p class="review-author">— Gitta (Hungary)</p>
-                </div>
+                    <div class="simple-review">
+                        <div class="review-content">
+                            <p><em>"I was preparing for a big trip. The initial anticipation and excitement were replaced by a heavy feeling. I realized that I needed an energetic solution for my fear of height. I turned to Chilly for help, as we had worked together successfully before. During our work, she managed to see and release the painful experience of me. We experienced great depths together, and there was even a lightness in it. After that, the feeling of fear of heights disappeared for me, and the excitement before the trip returned. 'Here I am, traveling !!!'"</em></p>
+                        </div>
+                        <p class="review-author">— Gitta (Hungary)</p>
+                    </div>
 
-                <div class="simple-review">
-                    <p><em>"I was treated by Chilly with EFT-tapping over a series of 5 sessions. Each session lasted for over 1 hour and the entire treatment took place over 5 successive days. Chilly helped me to overcome stories that were leading to difficulties with my work.</em></p>
-                    <p><em>Each session revealed emotions that were associated with stories. Speaking about the stories and the subsequent emotions with Chilly allowed her to narrow down the focus of my problem to the root cause. She then developed key statements for me to 'tap on'. Over the course of the 5 days many stories were revealed and by tapping on them I was able to remove the negative feelings attached to them. I became detached from the stories and as a result they lost their power over me.</em></p>
-                    <p><em>It was truly surprising to find how impactful removing emotions from stories can be. It totally transformed my attitude towards my work. No longer was I feeling anger and anxiety. Instead, I was able to approach work with a calmness and detachment that allowed me to make good decisions. The result was staggering. My reality transformed completely. The problems I was facing at work simply ceased to exist. I believe this was the result of the change in my personal vibration level, as negative, low vibration emotions were removed.</em></p>
-                    <p><em>This treatment left a strong impression on me. I feel like I now have a powerful tool to help me through my life experiences. I will be working with Chilly again and have decided to try a package treatment combining the positive effects of EFT, energy healing and massage she offers."</em></p>
-                    <p class="review-author">— Hans (Germany)</p>
-                </div>
+                    <div class="simple-review">
+                        <div class="review-content">
+                            <p><em>"I was treated by Chilly with EFT-tapping over a series of 5 sessions. Each session lasted for over 1 hour and the entire treatment took place over 5 successive days. Chilly helped me to overcome stories that were leading to difficulties with my work.</em></p>
+                            <p><em>Each session revealed emotions that were associated with stories. Speaking about the stories and the subsequent emotions with Chilly allowed her to narrow down the focus of my problem to the root cause. She then developed key statements for me to 'tap on'. Over the course of the 5 days many stories were revealed and by tapping on them I was able to remove the negative feelings attached to them. I became detached from the stories and as a result they lost their power over me.</em></p>
+                            <p><em>It was truly surprising to find how impactful removing emotions from stories can be. It totally transformed my attitude towards my work. No longer was I feeling anger and anxiety. Instead, I was able to approach work with a calmness and detachment that allowed me to make good decisions. The result was staggering. My reality transformed completely. The problems I was facing at work simply ceased to exist. I believe this was the result of the change in my personal vibration level, as negative, low vibration emotions were removed.</em></p>
+                            <p><em>This treatment left a strong impression on me. I feel like I now have a powerful tool to help me through my life experiences. I will be working with Chilly again and have decided to try a package treatment combining the positive effects of EFT, energy healing and massage she offers."</em></p>
+                        </div>
+                        <p class="review-author">— Hans (Germany)</p>
+                    </div>
 
-                <div class="simple-review">
-                    <h4>A Truly Transformative Experience – Thank You, Chilly</h4>
-                    <p><em>"My first EFT session was like nothing I could have imagined. I went in with no expectations, yet I truly opened up in a way I had never imagined. Chilly's warm, grounded presence made me feel completely safe – safe enough to let some of my deepest traumas surface.</em></p>
-                    <p><em>This trauma was one of the most significant I had ever carried, and while it didn't go away immediately, the release began in that session. What unfolded between us was a deeply connected experience. I felt in tune with Chilly, and it was clear that she felt the same. The energetic shift was like nothing I had ever experienced before – waves of mixed emotions, from sadness to laughter. Yes, we even cried and laughed together.</em></p>
-                    <p><em>It was beautiful.</em></p>
-                    <p><em>I have been lighter every day since that first session. My energy is stronger, I feel better and I have the will to live. The second and third were faster. My other traumas have become weaker, they no longer control my emotional world.</em></p>
-                    <p><em>If there is something in your life that is holding you back – emotionally, mentally, energetically – I encourage you to consider a few sessions with Chilly. Her intuition, compassion and abilities create a space for true healing. I can only recommend her 105%."</em></p>
-                    <p class="review-author">— Christian (England)</p>
+                    <div class="simple-review">
+                        <div class="review-content">
+                            <h4>A Truly Transformative Experience – Thank You, Chilly</h4>
+                            <p><em>"My first EFT session was like nothing I could have imagined. I went in with no expectations, yet I truly opened up in a way I had never imagined. Chilly's warm, grounded presence made me feel completely safe – safe enough to let some of my deepest traumas surface.</em></p>
+                            <p><em>This trauma was one of the most significant I had ever carried, and while it didn't go away immediately, the release began in that session. What unfolded between us was a deeply connected experience. I felt in tune with Chilly, and it was clear that she felt the same. The energetic shift was like nothing I had ever experienced before – waves of mixed emotions, from sadness to laughter. Yes, we even cried and laughed together.</em></p>
+                            <p><em>It was beautiful.</em></p>
+                            <p><em>I have been lighter every day since that first session. My energy is stronger, I feel better and I have the will to live. The second and third were faster. My other traumas have become weaker, they no longer control my emotional world.</em></p>
+                            <p><em>If there is something in your life that is holding you back – emotionally, mentally, energetically – I encourage you to consider a few sessions with Chilly. Her intuition, compassion and abilities create a space for true healing. I can only recommend her 105%."</em></p>
+                        </div>
+                        <p class="review-author">— Christian (England)</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -91,19 +307,27 @@
             <div class="container">
                 <h2>Massage Therapy Experiences</h2>
                 
-                <div class="simple-review">
-                    <p><em>"I have a stressful job. As a result I often times have stiff, aching muscles all over my body. I found myself in need of a relaxing massage to relieve muscle tension. Chilly came to my home and solved my problems with a deft full body massage. She has an incredible touch with a very calming and soothing energy. I was left feeling relaxed and rejuvenated, the aching in my muscles having been totally resolved."</em></p>
-                    <p class="review-author">— Johny (Australia)</p>
-                </div>
+                <div class="reviews-grid">
+                    <div class="simple-review">
+                        <div class="review-content">
+                            <p><em>"I have a stressful job. As a result I often times have stiff, aching muscles all over my body. I found myself in need of a relaxing massage to relieve muscle tension. Chilly came to my home and solved my problems with a deft full body massage. She has an incredible touch with a very calming and soothing energy. I was left feeling relaxed and rejuvenated, the aching in my muscles having been totally resolved."</em></p>
+                        </div>
+                        <p class="review-author">— Johny (Australia)</p>
+                    </div>
 
-                <div class="simple-review">
-                    <p><em>"I had an amazing massage in my own living room yesterday. Chilly was very professional and punctual. I received an amazing massage; she found all those places in my muscles that needed her magic touches to relieve my neck and shoulder tensions. Last night, I had the deepest sleep after her massage. The best part was that I could just hop into my bed afterward to rest. I think I've found my therapist."</em></p>
-                    <p class="review-author">— Krisztina (Angels, London, England)</p>
-                </div>
+                    <div class="simple-review">
+                        <div class="review-content">
+                            <p><em>"I had an amazing massage in my own living room yesterday. Chilly was very professional and punctual. I received an amazing massage; she found all those places in my muscles that needed her magic touches to relieve my neck and shoulder tensions. Last night, I had the deepest sleep after her massage. The best part was that I could just hop into my bed afterward to rest. I think I've found my therapist."</em></p>
+                        </div>
+                        <p class="review-author">— Krisztina (Angels, London, England)</p>
+                    </div>
 
-                <div class="simple-review">
-                    <p><em>"I have had the pleasure of experiencing multiple massages and BARS Therapy sessions with Chilly, and each time has been nothing short of extraordinary. Chilly comes to my home fully prepared, bringing everything needed to create a relaxing environment. From the moment she arrived, it was clear that she was dedicated to providing a top-notch experience. Chilly's attention to detail and professionalism are evident in every aspect of the session. The atmosphere she creates is incredibly soothing, making it easy to unwind and fully immerse myself in the therapy. Each session not only leaves me feeling rejuvenated but also completely refreshed, as if a weight has been lifted off my shoulders, ready to take on the world anew. I highly recommend Chilly's services to anyone seeking an exceptional massage and BARS Therapy experience. Her skills and dedication to her craft make every session a genuinely transformative experience. Thank you, Chilly, for helping me feel like a new person every time!"</em></p>
-                    <p class="review-author">— Krisztian (Seven Sisters, London, England)</p>
+                    <div class="simple-review">
+                        <div class="review-content">
+                            <p><em>"I have had the pleasure of experiencing multiple massages and BARS Therapy sessions with Chilly, and each time has been nothing short of extraordinary. Chilly comes to my home fully prepared, bringing everything needed to create a relaxing environment. From the moment she arrived, it was clear that she was dedicated to providing a top-notch experience. Chilly's attention to detail and professionalism are evident in every aspect of the session. The atmosphere she creates is incredibly soothing, making it easy to unwind and fully immerse myself in the therapy. Each session not only leaves me feeling rejuvenated but also completely refreshed, as if a weight has been lifted off my shoulders, ready to take on the world anew. I highly recommend Chilly's services to anyone seeking an exceptional massage and BARS Therapy experience. Her skills and dedication to her craft make every session a genuinely transformative experience. Thank you, Chilly, for helping me feel like a new person every time!"</em></p>
+                        </div>
+                        <p class="review-author">— Krisztian (Seven Sisters, London, England)</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -112,39 +336,55 @@
             <div class="container">
                 <h2>Access BARS Therapy Experiences</h2>
                 
-                <div class="simple-review">
-                    <p><em>"I have received multiple BARS treatments from Chilly. Each one was a very positive experience. As such I can highly recommend her. I believe she is especially effective at BARS since she has a very potent touch. I could feel energy flow through my body at her touch points and a lingering sensation of warmth when she moved on. Almost every session left me drifting off to a deep and peaceful sleep. I woke up in a joyous state, feeling relaxed and energised."</em></p>
-                    <p class="review-author">— John (Germany)</p>
-                </div>
+                <div class="reviews-grid">
+                    <div class="simple-review">
+                        <div class="review-content">
+                            <p><em>"I have received multiple BARS treatments from Chilly. Each one was a very positive experience. As such I can highly recommend her. I believe she is especially effective at BARS since she has a very potent touch. I could feel energy flow through my body at her touch points and a lingering sensation of warmth when she moved on. Almost every session left me drifting off to a deep and peaceful sleep. I woke up in a joyous state, feeling relaxed and energised."</em></p>
+                        </div>
+                        <p class="review-author">— John (Germany)</p>
+                    </div>
 
-                <div class="simple-review">
-                    <p><em>"After BARS treatments, I always felt as if all my worries had disappeared and I was overcome with infinite peace. This feeling remained for days and gave me the opportunity to think about the difficulties in my life stress-free. Chilly is a very nice lady who only paid attention to me during the treatments. I can only recommend her."</em></p>
-                    <p class="review-author">— Jani (Budapest, Hungary)</p>
-                </div>
+                    <div class="simple-review">
+                        <div class="review-content">
+                            <p><em>"After BARS treatments, I always felt as if all my worries had disappeared and I was overcome with infinite peace. This feeling remained for days and gave me the opportunity to think about the difficulties in my life stress-free. Chilly is a very nice lady who only paid attention to me during the treatments. I can only recommend her."</em></p>
+                        </div>
+                        <p class="review-author">— Jani (Budapest, Hungary)</p>
+                    </div>
 
-                <div class="simple-review">
-                    <p><em>"I had an Access Bars treatment with Chilly a couple of months ago. The treatment was so relaxing. I work in the beauty industry, I had issues with money, feeling guilty to ask the price for little extra corrections that I need to make, services I had to during beauty treatments. After the treatment it has changed. I don't feel guilty anymore to ask my price for the time and effort that I put into my work. I feel that I'm valuable, my work is valuable. Thank you Chilly for the BARS session because you have changed my self-worth and the way I look at my precious time and dare to ask my price for the quality of my work."</em></p>
-                    <p class="review-author">— Chrissy (London, England)</p>
-                </div>
+                    <div class="simple-review">
+                        <div class="review-content">
+                            <p><em>"I had an Access Bars treatment with Chilly a couple of months ago. The treatment was so relaxing. I work in the beauty industry, I had issues with money, feeling guilty to ask the price for little extra corrections that I need to make, services I had to during beauty treatments. After the treatment it has changed. I don't feel guilty anymore to ask my price for the time and effort that I put into my work. I feel that I'm valuable, my work is valuable. Thank you Chilly for the BARS session because you have changed my self-worth and the way I look at my precious time and dare to ask my price for the quality of my work."</em></p>
+                        </div>
+                        <p class="review-author">— Chrissy (London, England)</p>
+                    </div>
 
-                <div class="simple-review">
-                    <p><em>"Immediately after my first BARS session with Chilly, I felt elated, which lasted for weeks. All the negative seemed to have shifted, and I felt so positive and happy, able to get on with so much in my life that was really important to me but that I was forever putting off. After the second BARS session, I was literally on top of the world, and I still feel amazing weeks later. I'm definitely coming back for more; I'm so at peace and it's so uplifting. Thank you so much, Chilly."</em></p>
-                    <p class="review-author">— Becky (Essex, England)</p>
-                </div>
+                    <div class="simple-review">
+                        <div class="review-content">
+                            <p><em>"Immediately after my first BARS session with Chilly, I felt elated, which lasted for weeks. All the negative seemed to have shifted, and I felt so positive and happy, able to get on with so much in my life that was really important to me but that I was forever putting off. After the second BARS session, I was literally on top of the world, and I still feel amazing weeks later. I'm definitely coming back for more; I'm so at peace and it's so uplifting. Thank you so much, Chilly."</em></p>
+                        </div>
+                        <p class="review-author">— Becky (Essex, England)</p>
+                    </div>
 
-                <div class="simple-review">
-                    <p><em>"Hey Chilly, I just wanted to say a huge thank you for allowing me to attend the BARS session. The treatment was very relaxing, Chilly giving a really great explanation of what was involved. Since the treatment, I have had so much more energy, felt calmer, and slept much better. Thank you"</em></p>
-                    <p class="review-author">— Sarah (Essex, England)</p>
-                </div>
+                    <div class="simple-review">
+                        <div class="review-content">
+                            <p><em>"Hey Chilly, I just wanted to say a huge thank you for allowing me to attend the BARS session. The treatment was very relaxing, Chilly giving a really great explanation of what was involved. Since the treatment, I have had so much more energy, felt calmer, and slept much better. Thank you"</em></p>
+                        </div>
+                        <p class="review-author">— Sarah (Essex, England)</p>
+                    </div>
 
-                <div class="simple-review">
-                    <p><em>"I had my first BARS treatment with Chilly last week. I'd never heard of the treatment before and was looking forward to trying something new. I'm going through a difficult breakup, and on meeting Chilly, I instantly felt that she could sense my pain and sorrow. For me, the treatment was deeply relaxing, and for the first time, my mind relaxed. Following the treatment, I felt a sense of peace and clarity and a determination and strength that I hadn't felt before. I'll definitely be returning to Chilly and would recommend this treatment to anyone looking to regain perspective, no matter the reason."</em></p>
-                    <p class="review-author">— Laura (Essex, England)</p>
-                </div>
+                    <div class="simple-review">
+                        <div class="review-content">
+                            <p><em>"I had my first BARS treatment with Chilly last week. I'd never heard of the treatment before and was looking forward to trying something new. I'm going through a difficult breakup, and on meeting Chilly, I instantly felt that she could sense my pain and sorrow. For me, the treatment was deeply relaxing, and for the first time, my mind relaxed. Following the treatment, I felt a sense of peace and clarity and a determination and strength that I hadn't felt before. I'll definitely be returning to Chilly and would recommend this treatment to anyone looking to regain perspective, no matter the reason."</em></p>
+                        </div>
+                        <p class="review-author">— Laura (Essex, England)</p>
+                    </div>
 
-                <div class="simple-review">
-                    <p><em>"Before we started, Chilly kindly explained what BARS Therapy was and if I had any questions. I felt very calm and relaxed during the process and safe in my surroundings. I felt like I was somewhere between awake and asleep. I could feel each point that Chilly worked on, and it was very relaxing. My arms felt very heavy, like I had a weighted blanket on them. I'm normally a fidgeter, but I remained still throughout. Leaving the treatment, I felt full of energy and got a really calm sleep that night. Over the next few days, I was in a really productive mood and wanted to achieve so much. It's been a few weeks now, and I've felt a little clearer in my head and have been learning to be kinder to myself. I would definitely recommend Chilly and this treatment and have it done again."</em></p>
-                    <p class="review-author">— Kar (Essex, England)</p>
+                    <div class="simple-review">
+                        <div class="review-content">
+                            <p><em>"Before we started, Chilly kindly explained what BARS Therapy was and if I had any questions. I felt very calm and relaxed during the process and safe in my surroundings. I felt like I was somewhere between awake and asleep. I could feel each point that Chilly worked on, and it was very relaxing. My arms felt very heavy, like I had a weighted blanket on them. I'm normally a fidgeter, but I remained still throughout. Leaving the treatment, I felt full of energy and got a really calm sleep that night. Over the next few days, I was in a really productive mood and wanted to achieve so much. It's been a few weeks now, and I've felt a little clearer in my head and have been learning to be kinder to myself. I would definitely recommend Chilly and this treatment and have it done again."</em></p>
+                        </div>
+                        <p class="review-author">— Kar (Essex, England)</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -152,11 +392,11 @@
         <section id="cta" class="content-section">
             <div class="container">
                 <h2>Ready to Start Your Own Healing Journey?</h2>
-                <p>These beautiful testimonials are just the beginning. Your own transformation story is waiting to be written. Whether you're seeking relief from emotional blocks, physical tension, or simply want to explore new possibilities for growth and healing, I'm here to support you every step of the way.</p>
                 <div class="cta-buttons">
                     <a href="pricing.html" class="cta-button">View Pricing & Packages</a>
                     <a href="aboutme.html" class="cta-button secondary">Learn More About Me</a>
                 </div>
+                <p>These beautiful testimonials are just the beginning. Your own transformation story is waiting to be written. Whether you're seeking relief from emotional blocks, physical tension, or simply want to explore new possibilities for growth and healing, I'm here to support you every step of the way.</p>
             </div>
         </section>
     </main>
@@ -167,5 +407,52 @@
             <p class="footer-disclaimer">Disclaimer: By engaging with Chill To You, you acknowledge that you are solely responsible for your decisions, actions, and the outcomes of your choices. I do not take responsibility for how you choose to apply the tools and techniques we discuss, nor for the results you achieve. For serious mental issues, please consult a doctor. EFT is experimental, and you agree to take full responsibility for your well-being.</p>
         </div>
     </footer>
+
+    <script>
+        // Wave animation on scroll
+        let isAnimating = false;
+
+        function animateWave() {
+            const introSection = document.querySelector('.content-section.intro');
+            if (introSection && !isAnimating) {
+                isAnimating = true;
+
+                // Add animation class
+                const style = document.createElement('style');
+                style.textContent = `
+                    .content-section.intro::before {
+                        animation: waveFloat 2s ease-in-out;
+                    }
+                `;
+                document.head.appendChild(style);
+
+                // Remove animation after completion
+                setTimeout(() => {
+                    document.head.removeChild(style);
+                    isAnimating = false;
+                }, 2000);
+            }
+        }
+
+        // Throttled scroll listener
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+            scrollTimeout = setTimeout(() => {
+                const scrollY = window.scrollY;
+                const introSection = document.querySelector('.content-section.intro');
+
+                if (introSection) {
+                    const rect = introSection.getBoundingClientRect();
+                    // Trigger animation when intro section is in viewport
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        animateWave();
+                    }
+                }
+            }, 100);
+        });
+    </script>
 </body>
 </html>
