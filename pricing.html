@@ -25,9 +25,9 @@
     <header>
         <nav>
             <div class="logo">
-                <h1>Chill To You</h1>
+                <a href="index.html"><h1>Chill To You</h1></a>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+            <button type="button" class="mobile-menu-toggle" aria-label="Toggle mobile menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -37,7 +37,15 @@
                 <li><a href="aboutme.html" class="nav-link">About</a></li>
                 <li><a href="techniques.html" class="nav-link">Techniques</a></li>
                 <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
-                <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                <li class="nav-dropdown">
+                    <a href="reviews.html" class="nav-link">Reviews</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reviews.html#featured-testimonial" class="dropdown-link">Featured Professional Testimonial</a></li>
+                        <li><a href="reviews.html#eft-reviews" class="dropdown-link">EFT Tapping Experiences</a></li>
+                        <li><a href="reviews.html#massage-reviews" class="dropdown-link">Massage Therapy Experiences</a></li>
+                        <li><a href="reviews.html#bars-reviews" class="dropdown-link">Access BARS Therapy Experiences</a></li>
+                    </ul>
+                </li>
                 <li class="nav-dropdown">
                     <a href="faq.html" class="nav-link">FAQ</a>
                     <ul class="dropdown-menu">
@@ -58,87 +66,17 @@
         <section id="hero" class="hero-section">
             <div class="hero-content">
                 <h1>Pricing</h1>
-                <p class="hero-subtitle">Each session lasts between 90-100 minutes, giving us plenty of time to dive
-                    deep into your emotions and work through any challenges you're facing. If you need more time,
-                    consider a double session—200 minutes of undivided attention, booked at once. It's perfect for those
-                    who want to tackle deeper issues or simply prefer a longer, more immersive experience.</p>
             </div>
         </section>
 
-        <section id="intro" class="content-section intro">
+        <section id="individual-sessions" class="content-section">
             <div class="container">
-                <div class="intro-text">
-                    <p>To ensure we're the perfect match, I offer a complimentary 20-minute video call before we book
-                        your first session. It's a no-obligation consultation, because we both need to be sure we click!
-                    </p>
-                    <h2>Ready to take the plunge?</h2>
-                    <div class="cta-button">
-                        <a href="#contact" class="btn-primary">Book NOW</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="investment" class="content-section alt-bg">
-            <div class="container">
-                <h2>Invest in Your Well-being</h2>
-                <p>I believe in the power of commitment and dedication. That's why I offer bundle prices for clients who
-                    have worked with me before and are eager to continue their healing journey. These bundles ensure
-                    that we're both invested in your growth and transformation.</p>
-            </div>
-        </section>
-
-        <section id="pricing" class="content-section pricing">
-            <div class="container">
-                <h2>Pricing</h2>
+                <h2>Individual Sessions</h2>
                 <div class="pricing-grid">
                     <div class="pricing-card">
-                        <h3>Set of 10 Sessions</h3>
-                        <div class="price">€1000 <span class="save">(Save €111)</span></div>
-                        <p>Ideal for those committed to their personal growth and ready to dive deep into their healing
-                            journey. Must be used within 40 days for the discount price.</p>
-                        <div class="contact-button">
-                            <a href="#contact" class="btn-contact">Book NOW</a>
-                        </div>
-                    </div>
-
-                    <div class="pricing-card">
-                        <h3>Set of 7 Sessions</h3>
-                        <div class="price">€700 <span class="save">(Save €77)</span></div>
-                        <p>Perfect for comprehensive healing and transformation, allowing us to explore various aspects
-                            of your emotional landscape. Must be used within 28 days for the discount price.</p>
-                        <div class="contact-button">
-                            <a href="#contact" class="btn-contact">Book NOW</a>
-                        </div>
-                    </div>
-
-                    <div class="pricing-card most-popular">
-                        <div class="popular-badge">Most Popular</div>
-                        <h3>Set of 5 Sessions</h3>
-                        <div class="price">€500 <span class="save">(Save €55)</span></div>
-                        <p>Great for deep-seated issues or for those who want to make significant progress in their
-                            emotional well-being. Must be used within 21 days for the discount price.</p>
-                        <div class="contact-button">
-                            <a href="#contact" class="btn-contact">Book NOW</a>
-                        </div>
-                    </div>
-
-                    <div class="pricing-card">
-                        <h3>Set of 3 Sessions</h3>
-                        <div class="price">€300 <span class="save">(Save €33)</span></div>
-                        <p>Ideal for tackling more persistent challenges or for those who want to experience the
-                            cumulative benefits of Chill To You sessions. Must be used within 14 days for the discount
-                            price.</p>
-                        <div class="contact-button">
-                            <a href="#contact" class="btn-contact">Book NOW</a>
-                        </div>
-                    </div>
-
-                    <div class="pricing-card">
                         <h3>Double Session</h3>
-                        <div class="price">€200 <span class="save">(Save €22)</span></div>
-                        <p>Ideal for those who need more time at once. Book a double session, and I'll give you my
-                            undivided attention for 200 minutes.</p>
+                        <div class="price">€200 <span class="save">SAVE €22!</span></div>
+                        <p>200 minutes of undivided attention. Ideal for those who need more time in a single session to address complex issues.</p>
                         <div class="contact-button">
                             <a href="#contact" class="btn-contact">Book NOW</a>
                         </div>
@@ -147,8 +85,7 @@
                     <div class="pricing-card">
                         <h3>Single Session</h3>
                         <div class="price">€111</div>
-                        <p>Perfect for those who want to dip their toes into the Chill To You world or address a
-                            specific, one-time issue.</p>
+                        <p>Perfect for dipping your toes into the Chill To You world or addressing a specific, one-time issue.</p>
                         <div class="contact-button">
                             <a href="#contact" class="btn-contact">Book NOW</a>
                         </div>
@@ -157,20 +94,72 @@
             </div>
         </section>
 
-        <section id="emergency" class="content-section alt-bg emergency">
+        <section id="investment" class="content-section alt-bg">
+            <div class="container">
+                <h2>Commit to Your Journey with Our Bundle Packages</h2>
+                <p>At Chill To You, I believe in the power of commitment to personal growth. That's why I offer bundle packages designed to motivate and support your healing journey. Each package provides significant savings, encouraging you to dive deeper into your transformation.</p>
+            </div>
+        </section>
+
+        <section id="pricing" class="content-section pricing">
+            <div class="container">
+                <h2>Bundle Packages</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Deep Dive Package</h3>
+                        <div class="price">€900 <span class="save">SAVE €210!</span></div>
+                        <p>10 Sessions - Must be used within 45 days. Ideal for those fully committed to their personal growth and ready to embark on a profound healing journey.</p>
+                        <div class="contact-button">
+                            <a href="#contact" class="btn-contact">Book NOW</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3>Transformation Package</h3>
+                        <div class="price">€630 <span class="save">SAVE €147!</span></div>
+                        <p>7 Sessions - Must be used within 35 days. Ideal for comprehensive healing and transformation, perfect for exploring various aspects of your emotional landscape.</p>
+                        <div class="contact-button">
+                            <a href="#contact" class="btn-contact">Book NOW</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card most-popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3>Starter Package</h3>
+                        <div class="price">€450 <span class="save">SAVE €105!</span></div>
+                        <p>5 Sessions - Must be used within 25 days. Ideal for addressing deep-seated issues or making significant progress in your emotional well-being.</p>
+                        <div class="contact-button">
+                            <a href="#contact" class="btn-contact">Book NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bundle-benefits" class="content-section alt-bg">
+            <div class="container">
+                <h2>Why Choose a Bundle?</h2>
+                <div class="policy-list">
+                    <ul>
+                        <li><strong>Significant Savings:</strong> Enjoy substantial discounts when you commit to multiple sessions.</li>
+                        <li><strong>Flexible Duration:</strong> Each package comes with a generous time frame to use your sessions, ensuring you can integrate healing into your life at a comfortable pace.</li>
+                        <li><strong>Deeper Healing:</strong> Larger packages allow for a more in-depth exploration of your emotional landscape, leading to more profound and lasting transformations.</li>
+                        <li><strong>Exclusive Perks:</strong> As a bundle holder, you may receive additional benefits, such as priority booking and personalized healing plans.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="emergency" class="content-section emergency">
             <div class="container">
                 <h2>Emergency Appointments</h2>
-                <p>I have "same day" Emergency appointment. Please note that SOS Appointments are subject to
-                    availability.</p>
+                <p>Life can be unpredictable, and sometimes you need support right away. That's why I offer same-day emergency appointments, designed to provide immediate relief and guidance when you need it most.</p>
 
                 <div class="emergency-grid">
                     <div class="pricing-card emergency-card emergency-highlighted">
                         <h3>SOS Double</h3>
                         <div class="price">€300</div>
-                        <p>For those who need more intensive support, our SOS Double Session provides 200 minutes of
-                            continuous, focused attention. Ideal for deep-diving into complex issues or for those who
-                            prefer a more extensive therapeutic experience. This option is perfect for when you need to
-                            tackle multiple challenges in one go.</p>
+                        <p>200 minutes of continuous, focused attention. Ideal for deep-diving into complex issues or when you need to tackle multiple challenges in one go. This intensive support is perfect for those who require a more extensive therapeutic experience.</p>
                         <div class="contact-button">
                             <a href="#contact" class="btn-contact">Book NOW</a>
                         </div>
@@ -179,34 +168,18 @@
                     <div class="pricing-card emergency-card emergency-highlighted">
                         <h3>SOS Single</h3>
                         <div class="price">€160</div>
-                        <p>Need immediate support? Our SOS Appointment offers you undivided attention and priority
-                            scheduling. Perfect for those moments when you can't wait for your next regular session.
-                            This 90-100 minute session is designed to address your urgent needs and provide the support
-                            you require right away.</p>
+                        <p>90-100 minute session. Ideal for when you need immediate support and can't wait for your next regular session. This option offers undivided attention and priority scheduling to address your urgent needs right away.</p>
                         <div class="contact-button">
                             <a href="#contact" class="btn-contact">Book NOW</a>
                         </div>
                     </div>
                 </div>
 
-                <p>Bundle prices are available only for clients I've worked with before, ensuring that we're both happy
-                    with our collaboration and the results we've achieved. To secure your bundle, we'll discuss the next
-                    appointments once we agree to work together for the best results. To lock in your place and the
-                    bundle price, simply pay the full amount right after our purchase agreement.</p>
+                <p><strong>Please note:</strong> Emergency appointments are subject to availability. I do my best to accommodate same-day requests, but availability may vary.</p>
             </div>
         </section>
 
-        <section id="cta" class="content-section cta">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>Ready to Take the First Step?</h2>
-                    <p>Please, fill out this contact form to get started on your journey!</p>
-                    <div class="cta-button">
-                        <a href="#contact" class="btn-primary">Contact Me NOW</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <section id="policy" class="content-section alt-bg">
             <div class="container">
@@ -234,17 +207,9 @@
 
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Chill To You. All rights reserved.</p>
-            <p class="footer-disclaimer">Disclaimer: By engaging with Chill To You, you acknowledge that you are solely
-                responsible for your decisions, actions, and the outcomes of your choices. I do not take responsibility
-                for how you choose to apply the tools and techniques we discuss, nor for the results you achieve. For
-                serious mental issues, please consult a doctor. EFT is experimental, and you agree to take full
-                responsibility for your well-being.</p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script src="footer-loader.js"></script>
     <script>
         // Mobile menu toggle functionality
         document.addEventListener('DOMContentLoaded', function() {

@@ -1,0 +1,40 @@
+<!-- Alternative version using EmailJS -->
+<!-- Add this to the head section: -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<!-- JavaScript for EmailJS: -->
+<script>
+    // Initialize EmailJS
+    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+
+    document.querySelector('.contact-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const submitBtn = document.querySelector('.btn-primary');
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        // Send email using EmailJS
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+            .then(function () {
+                showMessage('Thank you! Your message has been sent successfully.', 'success');
+                document.querySelector('.contact-form').reset();
+            }, function (error) {
+                showMessage('Sorry, there was an error. Please try again.', 'error');
+                console.log('Failed:', error);
+            })
+            .finally(() => {
+                submitBtn.textContent = 'Send Message';
+                submitBtn.disabled = false;
+            });
+    });
+
+    /*
+    To use EmailJS:
+    1. Go to https://www.emailjs.com/
+    2. Sign up for free
+    3. Create a service (Gmail, Outlook, etc.)
+    4. Create an email template
+    5. Replace YOUR_PUBLIC_KEY, YOUR_SERVICE_ID, and YOUR_TEMPLATE_ID
+    */
+</script>

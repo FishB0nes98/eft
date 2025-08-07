@@ -21,9 +21,9 @@
     <header>
         <nav>
             <div class="logo">
-                <h1>Chill To You</h1>
+                <a href="index.html"><h1>Chill To You</h1></a>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+            <button type="button" class="mobile-menu-toggle" aria-label="Toggle mobile menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -33,7 +33,15 @@
                 <li><a href="aboutme.html" class="nav-link">About</a></li>
                 <li><a href="techniques.html" class="nav-link">Techniques</a></li>
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-                <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                <li class="nav-dropdown">
+                    <a href="reviews.html" class="nav-link">Reviews</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reviews.html#featured-testimonial" class="dropdown-link">Featured Professional Testimonial</a></li>
+                        <li><a href="reviews.html#eft-reviews" class="dropdown-link">EFT Tapping Experiences</a></li>
+                        <li><a href="reviews.html#massage-reviews" class="dropdown-link">Massage Therapy Experiences</a></li>
+                        <li><a href="reviews.html#bars-reviews" class="dropdown-link">Access BARS Therapy Experiences</a></li>
+                    </ul>
+                </li>
                 <li class="nav-dropdown">
                     <a href="faq.html" class="nav-link active">FAQ</a>
                     <ul class="dropdown-menu">
@@ -336,40 +344,9 @@
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Company</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="aboutme.html">About</a></li>
-                    <li><a href="reviews.html">Reviews</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Work With Me</h3>
-                <ul>
-                    <li><a href="techniques.html">Techniques</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Content</h3>
-                <ul>
-                    <li><a href="faq.html#faq-content">About EFT Tapping</a></li>
-                    <li><a href="faq.html#spiritual-techniques">Spiritual & Holistic Techniques</a></li>
-                    <li><a href="faq.html#online-work">Online, Offline & Mobile Work</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Chill To You. All rights reserved.</p>
-            <p class="footer-disclaimer">Disclaimer: By engaging with Chill To You, you acknowledge that you are solely responsible for your decisions, actions, and the outcomes of your choices. I do not take responsibility for how you choose to apply the tools and techniques we discuss, nor for the results you achieve. For serious mental issues, please consult a doctor. EFT is experimental, and you agree to take full responsibility for your well-being.</p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script src="footer-loader.js"></script>
     <script>
         // Mobile menu toggle functionality
         document.addEventListener('DOMContentLoaded', function() {

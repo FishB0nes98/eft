@@ -36,7 +36,7 @@ body {
 h1, h2, h3 {
     font-weight: 300;
     margin-bottom: 2.5rem;
-    color: var(--ocean-deep);
+    color: #05b2b5;
     letter-spacing: 0.8px;
     text-align: center;
 }
@@ -99,6 +99,16 @@ nav {
     color: #05b2b5;
     font-size: 1.8rem;
     margin: 0;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo a:hover {
+    text-decoration: none;
+    color: #04a0a3;
 }
 
 .nav-menu {
@@ -996,19 +1006,123 @@ nav {
 footer {
     background: linear-gradient(135deg, #05b2b5 0%, #04a0a3 100%);
     color: white;
-    text-align: center;
-    padding: 2rem 0;
+    padding: 3rem 0 1rem 0;
     border-radius: 50px 50px 0 0;
 }
 
-.footer-disclaimer {
-    font-size: 0.6rem;
-    line-height: 1.2;
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-section h3 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.footer-section p {
+    color: white;
+    opacity: 0.9;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    color: white;
+    opacity: 0.9;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.footer-section ul li:before {
+    content: '•';
+    color: white;
+    position: absolute;
+    left: 0;
+    opacity: 0.7;
+}
+
+.contact-info, .social-links, .location-info {
     margin-top: 1rem;
+}
+
+.map-link {
+    color: white;
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+.map-link:hover {
+    opacity: 1;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+
+
+.footer-disclaimer {
+    font-size: 0.7rem;
+    line-height: 1.3;
+    margin-top: 1.5rem;
     opacity: 0.8;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center !important;
+    display: block;
+    width: 100%;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .footer-bottom {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .footer-disclaimer {
+        font-size: 0.65rem;
+    }
 }
 
 /* FAQ Styles */

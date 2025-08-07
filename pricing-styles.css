@@ -36,7 +36,7 @@ body {
 h1, h2, h3 {
     font-weight: 300;
     margin-bottom: 2.5rem;
-    color: var(--ocean-deep);
+    color: #05b2b5;
     letter-spacing: 0.8px;
     text-align: center;
 }
@@ -68,6 +68,36 @@ p {
     letter-spacing: 0.4px;
 }
 
+/* Text styling from styles.css */
+.intro-text p,
+.features-list h3,
+.features-list p,
+.services-list li,
+.services-list p,
+.capabilities-list h3,
+.capabilities-list p,
+.cta-content p,
+.disclaimer-section p {
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.features-list h3,
+.capabilities-list h3 {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.5rem;
+}
+
+.services-list li {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    margin-bottom: 0.8rem;
+}
+
 /* Container */
 .container {
     max-width: 1000px;
@@ -96,9 +126,19 @@ nav {
 }
 
 .logo h1 {
-    color: var(--ocean-deep);
+    color: #05b2b5;
     font-size: 1.8rem;
     margin: 0;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo a:hover {
+    text-decoration: none;
+    color: #04a0a3;
 }
 
 .nav-menu {
@@ -290,8 +330,26 @@ nav {
 }
 
 .content-section.alt-bg {
-    background: linear-gradient(135deg, var(--sand-light) 0%, var(--foam-white) 100%);
+    background: none;
     margin: 0;
+    position: relative;
+}
+
+.content-section.alt-bg::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background-image: url('wave-divider.svg');
+    background-size: 100% 120px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    z-index: 10;
+    pointer-events: none;
+    transform: scaleY(-1);
+    transition: transform 0.1s ease-out;
 }
 
 /* Intro Section */
@@ -301,7 +359,9 @@ nav {
 }
 
 .intro-text p {
-    font-size: 1.2rem;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
     line-height: 2.2;
     margin-bottom: 2.5rem;
 }
@@ -378,19 +438,20 @@ nav {
 }
 
 .price {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
-    color: var(--ocean-medium);
+    color: #05b2b5;
     margin-bottom: 1.5rem;
     font-family: 'Comfortaa', sans-serif;
 }
 
 .save {
-    font-size: 1.3rem;
-    color: var(--accent-teal);
-    font-weight: 600;
+    font-size: 1.5rem;
+    color: #ff0000;
+    font-weight: 700;
     display: block;
     margin-top: 0.5rem;
+    text-transform: uppercase;
 }
 
 .pricing-card p {
@@ -500,13 +561,15 @@ nav {
 }
 
 .policy-list li {
-    padding: 0.8rem 0;
+    padding: 1rem 0;
     color: var(--text-medium);
     line-height: 1.8;
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: 2rem;
     font-weight: 300;
-    font-size: 1rem;
+    font-size: 18px;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.3px;
 }
 
 .policy-list li:before {
@@ -514,8 +577,15 @@ nav {
     color: var(--ocean-medium);
     position: absolute;
     left: 0;
-    top: 0.8rem;
-    font-size: 1rem;
+    top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.policy-list li strong {
+    color: #05b2b5;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 /* CTA Section */
@@ -578,25 +648,127 @@ nav {
 footer {
     background: linear-gradient(135deg, #05b2b5 0%, #04a0a3 100%);
     color: white;
-    text-align: center;
-    padding: 2rem 0;
+    padding: 3rem 0 1rem 0;
     border-radius: 50px 50px 0 0;
 }
 
-.footer-disclaimer {
-    font-size: 0.6rem;
-    line-height: 1.2;
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-section h3 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.footer-section p {
+    color: white;
+    opacity: 0.9;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    color: white;
+    opacity: 0.9;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.footer-section ul li:before {
+    content: '•';
+    color: white;
+    position: absolute;
+    left: 0;
+    opacity: 0.7;
+}
+
+.contact-info, .social-links, .location-info {
     margin-top: 1rem;
+}
+
+.map-link {
+    color: white;
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+.map-link:hover {
+    opacity: 1;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.footer-disclaimer {
+    font-size: 0.7rem;
+    line-height: 1.3;
+    margin-top: 1.5rem;
     opacity: 0.8;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center !important;
+    display: block;
+    width: 100%;
 }
 
 footer p {
     margin: 0;
     color: white;
     opacity: 0.8;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .footer-bottom {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .footer-disclaimer {
+        font-size: 0.65rem;
+    }
 }
 
 /* Mobile Menu Toggle Button */

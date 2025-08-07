@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Chill To You</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact-styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1><a href="index.html">Chill To You</a></h1>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="aboutme.html" class="nav-link">About Me</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link services">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="techniques.html" class="dropdown-link">Techniques</a></li>
+                        <li><a href="pricing.html" class="dropdown-link">Pricing</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Thank You!</h1>
+                <p class="hero-subtitle">Your message has been sent successfully.</p>
+            </div>
+        </section>
+
+        <section class="content-section intro">
+            <div class="container">
+                <div class="intro-text">
+                    <div class="thank-you-content">
+                        <div class="success-icon">✓</div>
+                        <h2>Message Sent Successfully</h2>
+                        <p>Thank you for reaching out! I have received your message and will get back to you within 24-48 hours.</p>
+                        <p>In the meantime, feel free to explore more about my services and techniques.</p>
+                        
+                        <div class="thank-you-actions">
+                            <a href="index.html" class="btn-primary">Return to Home</a>
+                            <a href="techniques.html" class="btn-secondary">Learn About Techniques</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-info-section">
+            <div class="container">
+                <div class="contact-info-grid">
+                    <div class="contact-info-card">
+                        <h3>What's Next?</h3>
+                        <p>I'll review your message and respond personally to discuss how I can best support your healing journey.</p>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <h3>Response Time</h3>
+                        <p>I typically respond within 24-48 hours. For urgent matters, please don't hesitate to mention this in your message.</p>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <h3>Preparation</h3>
+                        <p>While you wait, consider what specific areas you'd like to focus on during our session together.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="footer-loader.js"></script>
+    <script>
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            navMenu.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
